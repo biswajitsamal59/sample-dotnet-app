@@ -49,7 +49,7 @@ public class WeatherForecastController : ControllerBase
         var secretFolders = Directory.GetDirectories(AppSecretsMountPath);
         foreach (var folder in secretFolders)
         {
-            var allSecretFiles = Directory.GetFiles(AppSecretsMountPath);
+            var allSecretFiles = Directory.GetFiles(folder);
             foreach (var f in allSecretFiles)
             {
                 Console.WriteLine($"Secret '{f}' has value '{System.IO.File.ReadAllText(f)}'");
